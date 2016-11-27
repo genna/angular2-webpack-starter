@@ -1,0 +1,9 @@
+<div *ngIf="!!post">
+	<div>
+		<input type="text" [ngModel]="post.title" #title>
+		<button (click)="changeTitle(title.value)">Change title</button>
+	</div>
+	<post-header [post]="post"></post-header>
+	<comments-summary [summary]="commentsSummary"></comments-summary>
+	<comments [items]="comments"></comments>
+</div>
