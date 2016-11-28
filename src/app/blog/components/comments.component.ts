@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 
 @Component({
 	selector: 'comments',
@@ -7,4 +7,9 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 })
 export class CommentsComponent {
 	@Input() items: any[];
+	@Output() vote = new EventEmitter<string>();
+
+	onVote(authorId) {
+		this.vote.emit(authorId);
+	}
 }

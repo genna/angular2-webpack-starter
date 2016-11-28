@@ -1,2 +1,2 @@
 <h3>Comments</h3>
-<comment [item]="item" *ngFor="let item of items"></comment>
+<comment [item]="item" *ngFor="let item of items" (vote)="onVote($event)"></comment>

@@ -1,4 +1,7 @@
 <div>
 	<p>{{item.content}}</p>
-	<pre>Author: {{item.author}}</pre>
+	<div class="author">
+		<i>Author: {{item.author.name}} ({{item.author.votes || '0'}})</i>
+		<button (click)="onVote()">Vote for author</button>
+	</div>
 </div>

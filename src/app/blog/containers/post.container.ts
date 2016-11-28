@@ -36,7 +36,11 @@ export class PostContainer implements OnInit {
 		this.actions.loadPost();
 	}
 
-	changeTitle(title) {
+	onChangeTitle(title) {
 		this.actions.changeTitle(title);
+	}
+
+	onVote(id: string) {
+		this.actions.voteForAuthor(id);
 	}
 }

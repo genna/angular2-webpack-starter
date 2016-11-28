@@ -1,9 +1,6 @@
 <div *ngIf="!!post">
-	<div>
-		<input type="text" [ngModel]="post.title" #title>
-		<button (click)="changeTitle(title.value)">Change title</button>
-	</div>
-	<post-header [post]="post"></post-header>
+	<post-header [post]="post" (titleChange)="onChangeTitle($event)"></post-header>
+	<hr>
 	<comments-summary [summary]="commentsSummary"></comments-summary>
-	<comments [items]="comments"></comments>
+	<comments [items]="comments" (vote)="onVote($event)"></comments>
 </div>

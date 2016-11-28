@@ -22,4 +22,8 @@ export class BlogActions {
 	changeTitle(title: string) {
 		this.ngRedux.dispatch({ type: ActionTypes.CHANGE_TITLE, payload: title });
 	}
+
+	voteForAuthor(authorId: string) {
+		this.ngRedux.dispatch({ type: ActionTypes.VOTE_FOR_AUTHOR, payload: authorId });
+	}
 }

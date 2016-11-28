@@ -29,7 +29,7 @@ export const commentsSelector = createSelector(
 		return Object.values(comments).map(x => {
 			return {
 				content: x.content,
-				author: authors[x.author].name
+				author: authors[x.author]
 			};
 		});
 	}

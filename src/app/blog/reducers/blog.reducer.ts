@@ -20,6 +20,10 @@ export const blog = (state: ImmutableStateType = initialState, action: IAction):
 		case ActionTypes.CHANGE_TITLE:
 			let postId = state.data.result;
 			return state.setIn(['data', 'entities', 'posts', postId, 'title'], action.payload);
+		case ActionTypes.VOTE_FOR_AUTHOR:
+			let author = state.data.entities.commentAuthors[action.payload];
+			let votes = author.votes || 0;
+			return state.setIn(['data', 'entities', 'commentAuthors', author.id, 'votes'], votes + 1);
 		default:
 			return state;
 	}

@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { Post } from '../models/post.model';
 
 @Component({
@@ -8,4 +8,9 @@ import { Post } from '../models/post.model';
 })
 export class PostHeaderComponent {
 	@Input() post: Post;
-}
+	@Output() titleChange = new EventEmitter<string>();
+
+	changeTitle(title) {
+		this.titleChange.emit(title);
+	}
+ }
