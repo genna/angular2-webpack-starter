@@ -2,8 +2,6 @@
   "id": 1,
   "title": "Blog Title",
   "content": "Some really short blog content.  Actually the least interesting post ever",
-  "created_at": "2016-01-10T23:07:43.248Z",
-  "updated_at": "2016-01-10T23:07:43.248Z",
   "author": {
     "id": 81,
     "name": "Mr Shelby"

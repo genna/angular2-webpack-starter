@@ -23,14 +23,11 @@ export class PostContainer implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.ngRedux
-			.select(x => x.blog)
+		this.ngRedux.select(x => x.blog).filter(x => !!x.data)
 			.subscribe(state => {
-				if (state.data) {
-					this.post = currentPostSelector(state);
-					this.commentsSummary = commentsSummarySelector(state)
-					this.comments = commentsSelector(state);
-				}
+				this.post = currentPostSelector(state);
+				this.commentsSummary = commentsSummarySelector(state)
+				this.comments = commentsSelector(state);
 			});
 
 		this.actions.loadPost();

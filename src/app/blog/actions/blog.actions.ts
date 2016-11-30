@@ -15,7 +15,7 @@ export class BlogActions {
 	}
 
 	async loadPost(): Promise<void> {
-		let post = await this.provider.loadPost();
+		let post = await this.provider.loadNormalizedPost();
 		this.ngRedux.dispatch({ type: ActionTypes.SET_POST_DATA, payload: post });
 	}
 

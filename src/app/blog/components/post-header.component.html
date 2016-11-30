@@ -1,6 +1,6 @@
 <div>
 	<input type="text" [ngModel]="post.title" #title>
-	<button (click)="onChangeTitle(title.value)">Change title</button>
+	<button (click)="changeTitle(title.value)">Change title</button>
 </div>
 <h3>{{post.title}}</h3>
 <p>{{post.content}}</p>

@@ -11,7 +11,7 @@ export class BlogProvider {
 		this.http = http;
 	}
 
-	loadPost(): Promise<any> {
+	loadNormalizedPost(): Promise<any> {
 		return this.http
 			.get('assets/data.json')
 			.map(response => response.json())
